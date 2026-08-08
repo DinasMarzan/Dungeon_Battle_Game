@@ -1,0 +1,152 @@
+[gd_scene format=4 uid="uid://bt2eldmhndbpq"]
+
+[ext_resource type="Script" uid="uid://cy0cmgnv6kcc2" path="res://main.gd" id="1_7mycd"]
+[ext_resource type="Texture2D" uid="uid://dlycjlfii22bk" path="res://icon.svg" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://ceof0yxc5iuh" path="res://player.gd" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://cqxfeme27ey24" path="res://dungeon_grid.gd" id="2_h2yge"]
+[ext_resource type="Script" uid="uid://ccpkv420oi3g3" path="res://enemy_ai.gd" id="3_1bvp3"]
+[ext_resource type="Script" uid="uid://bfy60x35jhdep" path="res://ui_manager.gd" id="5_lquwl"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xm2m"]
+texture = ExtResource("1_ig7tw")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_74sng"]
+tile_size = Vector2i(128, 128)
+sources/0 = SubResource("TileSetAtlasSource_0xm2m")
+
+[node name="Main" type="Node2D" unique_id=963979748]
+script = ExtResource("1_7mycd")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1917326733]
+offset_left = -1925.0
+offset_top = -733.0
+offset_right = 4307.0
+offset_bottom = 2266.0
+color = Color(0.19915286, 2.7242006e-05, 0.19915128, 1)
+
+[node name="DungeonGrid" type="TileMapLayer" parent="." unique_id=1640328130]
+modulate = Color(18.892157, 0, 9.313816, 1)
+tile_map_data = PackedByteArray("AADx//r/AAAEAAIAAADy//r/AAADAAMAAADz//r/AAADAAMAAAD0//r/AAADAAMAAAD6//r/AAADAAMAAAD7//r/AAADAAMAAAD8//r/AAADAAMAAAD9//r/AAADAAMAAAD+//r/AAADAAMAAAD///r/AAADAAMAAAAAAPr/AAADAAMAAAABAPr/AAADAAMAAAACAPr/AAADAAMAAAADAPr/AAADAAMAAAAEAPr/AAADAAMAAAAFAPr/AAADAAMAAAAGAPr/AAADAAMAAAAHAPr/AAADAAMAAAAIAPr/AAADAAMAAAAJAPr/AAADAAMAAAAKAPr/AAADAAMAAAALAPr/AAADAAMAAAAMAPr/AAADAAMAAAANAPr/AAADAAMAAAAOAPr/AAADAAMAAAAPAPr/AAADAAMAAAAQAPr/AAADAAMAAAARAPr/AAADAAMAAAASAPr/AAADAAMAAAATAPr/AAADAAMAAAAUAPr/AAADAAMAAAAVAPr/AAADAAMAAAAWAPr/AAADAAMAAAAXAPr/AAADAAMAAAAYAPr/AAADAAMAAAAZAPr/AAADAAMAAAAaAPr/AAADAAMAAAAbAPr/AAADAAMAAAAcAPr/AAADAAMAAAAdAPr/AAADAAMAAAAeAPr/AAADAAMAAAAfAPr/AAADAAMAAAAgAPr/AAADAAMAAAAhAPr/AAADAAMAAAAhAPv/AAADAAIAAAAhAPz/AAADAAMAAAAhAP3/AAADAAIAAAAhAP7/AAADAAMAAAAhAP//AAADAAIAAAAhAAAAAAADAAMAAAAhAAEAAAADAAIAAAAhAAIAAAADAAMAAAAhAAMAAAADAAIAAAAhAAQAAAADAAMAAAAhAAUAAAADAAIAAAAhAAYAAAADAAMAAAAhAAcAAAADAAIAAAAhAAgAAAADAAMAAAAhAAkAAAADAAIAAAAhAAoAAAADAAMAAAAhAAsAAAADAAIAAAAhAAwAAAADAAMAAAAhAA0AAAADAAIAAAAhAA4AAAADAAMAAAAhAA8AAAADAAIAAAAhABAAAAADAAMAAAAgABEAAAADAAIAAAAfABEAAAADAAIAAAAeABEAAAADAAIAAAAdABEAAAADAAIAAAAcABEAAAADAAIAAAAbABEAAAADAAIAAAAaABEAAAADAAIAAAAZABEAAAADAAIAAAAYABEAAAADAAIAAAAXABEAAAADAAIAAAAWABEAAAADAAIAAAAVABEAAAADAAIAAAAUABEAAAADAAIAAAATABEAAAADAAIAAAASABEAAAADAAIAAAARABEAAAADAAIAAAAQABEAAAADAAIAAAAPABEAAAADAAIAAAAOABEAAAADAAIAAAANABEAAAADAAIAAAAMABEAAAADAAIAAAALABEAAAADAAIAAAAKABEAAAADAAIAAAAJABEAAAADAAIAAAAIABEAAAADAAIAAAAHABEAAAADAAIAAAAGABEAAAADAAIAAAAFABEAAAADAAIAAAAEABEAAAADAAIAAAADABEAAAADAAIAAAACABEAAAADAAIAAAABABEAAAADAAIAAAAAABEAAAADAAIAAAD//xEAAAADAAIAAAD+/xEAAAADAAIAAAD9/xEAAAADAAIAAAD8/xEAAAADAAIAAAD7/xEAAAADAAIAAAD6/xEAAAADAAIAAAD5/xEAAAADAAIAAAD4/xEAAAADAAIAAAD3/xEAAAADAAIAAAD2/xEAAAADAAIAAAD1/xEAAAADAAIAAAD0/xEAAAADAAIAAADz/xEAAAADAAIAAADy/xEAAAADAAIAAADx/xEAAAADAAIAAAD5//r/AAADAAMAAAD4//r/AAADAAMAAAD3//r/AAADAAMAAAD2//r/AAADAAMAAAD1//r/AAADAAMAAAAhABEAAAAEAAIAAADx//v/AAAEAAIAAADx//z/AAAEAAIAAADx//3/AAAEAAIAAADx//7/AAAEAAIAAADx////AAAEAAIAAADx/wAAAAAEAAIAAADx/wEAAAAEAAIAAADx/wIAAAAEAAIAAADx/wMAAAAEAAIAAADx/wQAAAAEAAIAAADx/wUAAAAEAAIAAADx/wYAAAAEAAIAAADx/wcAAAAEAAIAAADx/wgAAAAEAAIAAADx/wkAAAAEAAIAAADx/woAAAAEAAIAAADx/wsAAAAEAAIAAADx/wwAAAAEAAIAAADx/w0AAAAEAAIAAADx/w4AAAAEAAIAAADx/w8AAAAEAAIAAADx/xAAAAAEAAIAAAA=")
+tile_set = SubResource("TileSet_74sng")
+script = ExtResource("2_h2yge")
+
+[node name="EnemyAI" type="Sprite2D" parent="." unique_id=2036391833]
+modulate = Color(1.9947672, 0.51553077, 0, 1)
+position = Vector2(1465.0002, 412.00003)
+scale = Vector2(1.3847659, 1.6035153)
+texture = ExtResource("1_ig7tw")
+script = ExtResource("3_1bvp3")
+
+[node name="Player" type="Sprite2D" parent="." unique_id=1798635957]
+modulate = Color(0, 0.9764706, 0.043137256, 1)
+position = Vector2(1189.0002, 777.9999)
+scale = Vector2(1.5292972, 1.609375)
+texture = ExtResource("1_ig7tw")
+script = ExtResource("2_0xm2m")
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=916339033]
+zoom = Vector2(0.3, 0.3)
+
+[node name="Item" type="Sprite2D" parent="." unique_id=70338006]
+modulate = Color(5.7440143, 4.0233436, 0, 0.65882355)
+self_modulate = Color(0.67058825, 0.6156863, 0.09803922, 1)
+position = Vector2(3720, 675)
+texture = ExtResource("1_ig7tw")
+centered = false
+
+[node name="UiManager" type="CanvasLayer" parent="." unique_id=1722780886]
+script = ExtResource("5_lquwl")
+
+[node name="PlayerHealthText" type="Label" parent="UiManager" unique_id=1313454972]
+offset_left = 42.0
+offset_top = 90.0
+offset_right = 480.0
+offset_bottom = 159.0
+theme_override_colors/font_color = Color(0, 1, 0.16078432, 1)
+theme_override_font_sizes/font_size = 35
+text = "Player Health: 100"
+
+[node name="EnemyHealthText" type="Label" parent="UiManager" unique_id=1081231885]
+offset_left = 42.0
+offset_top = 139.0
+offset_right = 186.0
+offset_bottom = 162.0
+theme_override_colors/font_color = Color(1, 0.21960784, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "Enemy Health: 100"
+
+[node name="RestartButton" type="Button" parent="UiManager" unique_id=1868678154]
+offset_left = 713.0
+offset_top = 412.0
+offset_right = 1061.0
+offset_bottom = 561.0
+text = "PLAY AGAIN"
+
+[node name="RadarText" type="Label" parent="UiManager" unique_id=652034867]
+offset_left = 1287.0
+offset_right = 1520.0
+offset_bottom = 203.0
